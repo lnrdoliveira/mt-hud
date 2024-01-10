@@ -93,11 +93,13 @@ CreateThread(function()
                         SendNUIMessage({ action = 'showVehicleHUD' })
                     end
                     local crossroads = getCrossroads(vehicle)
+                    local selectedgear = getSelectedGear()
+                    local gearlol = getinfo(selectedgear)
                     SendNUIMessage({
                         action = 'updateVehicleHUD',
                         speed = math.ceil(GetEntitySpeed(vehicle) * Config.speedMultiplier),
                         fuel = math.ceil(GetVehicleFuelLevel(vehicle)),
-                        gear = GetVehicleCurrentGear(vehicle),
+                        gear = gearlol,
                         street1 = crossroads[1],
                         street2 = crossroads[2],
                         direction = GetDirectionText(GetEntityHeading(vehicle)),
@@ -108,6 +110,31 @@ CreateThread(function()
                     })
                     else if vehicleHUDActive then vehicleHUDActive = false DisplayRadar(false) SendNUIMessage({ action = 'hideVehicleHUD' }) end end
             end
+
+            --[[
+                
+            Citizen.CreateThread(function()
+                while true do
+                    local player = GetPlayerPed(-1)
+                    local vehicle = GetVehiclePedIsIn(player, false)
+
+                    if IsPedInAnyVehicle(player, false) then
+                    --print("is a car beu")
+                        local rpmlol = GetVehicleCurrentRpm(vehicle)
+                        local selectedgear = getSelectedGear()
+                        local gearlol = getinfo(selectedgear)
+                        --print("RPM: " .. rpm)  -- Debugging line
+
+                        SendNUIMessage({
+                            rpm = rpmlol,
+                            gear = gearlol
+                        })
+                    end
+                    Citizen.Wait(100)
+                end
+            end)
+
+            ]]--
 
         else
             vehicleHUDActive = false

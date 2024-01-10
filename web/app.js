@@ -77,6 +77,9 @@ $(document).ready(function(){
         }
     }
 
+
+
+
     function updateVehicleHUD(data) {
         $('#speed').text(data.speed)
 
@@ -86,11 +89,7 @@ $(document).ready(function(){
 
         $('#fuel').text(data.fuel)
 
-        if (data.gear == 0) {
-            $('#gear').text('R')
-        } else {
-            $('#gear').text(data.gear)
-        }
+        $('#gear').text(data.gear)
 
         $('#street1').text(data.street1)
 

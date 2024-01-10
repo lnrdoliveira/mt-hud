@@ -165,6 +165,7 @@ body {
 #gear {
     position: absolute;
     font-size: 40px;
+    color: #90f6fd; 
     bottom: 0px;
     left: 10px;
 }
