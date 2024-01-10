@@ -6,7 +6,7 @@ You can find the original mt-hud by MT-Scripts [here](https://github.com/MT-Scri
 # Preview
 Manual vehicle:
 ![Vehicle hud with manual vehicle](https://i.imgur.com/1E7RtuZ.png)
-Automatico vehicle:
+Automatic vehicle:
 ![Vehicle hud with automatic vehicle](https://i.imgur.com/snp2ZP7.png)
 Aircraft:
 ![Aircraft hud](https://i.imgur.com/f0sczRN.png)
