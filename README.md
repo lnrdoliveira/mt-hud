@@ -4,8 +4,13 @@ Changes made to the mt-hud by MT-Scripts.
 You can find the original mt-hud by MT-Scripts [here](https://github.com/MT-Scripts/mt-hud).
 
 # Preview
-![Captura de ecrã 2023-12-22 213304](https://i.imgur.com/hkvcJEU.png)
-![Captura de ecrã 2023-12-22 213512](https://i.imgur.com/f0sczRN.png)
+Manual vehicle:
+![Vehicle hud with manual vehicle](https://i.imgur.com/1E7RtuZ.png)
+Automatico vehicle:
+![Vehicle hud with automatic vehicle](https://i.imgur.com/snp2ZP7.png)
+Aircraft:
+![Aircraft hud](https://i.imgur.com/f0sczRN.png)
+
 
 # Features
 - Status HUD with health, armor, hunger, thirst and stamina
@@ -20,6 +25,7 @@ You can find the original mt-hud by MT-Scripts [here](https://github.com/MT-Scri
 - Added a smooth animation for filling or emptying HUD components
 - Added atlas map
 - Responsive HUD across all available resolutions up to 1920x1080
+- Added compatibility with [HRSGears](https://github.com/HugoSimoes12345/HRSGears) and visual element responding according to the vehicle's gear by @JCllem
 
 # Dependencies
 - qb-core

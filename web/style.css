@@ -370,8 +370,8 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
+        font-size: 28px;
+        bottom: -4px;
         left: 10px;
     }
     
@@ -575,8 +575,8 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
+        font-size: 28px;
+        bottom: -4px;
         left: 10px;
     }
     
@@ -781,8 +781,8 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
+        font-size: 28px;
+        bottom: -4px;
         left: 10px;
     }
     
@@ -986,8 +986,8 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
+        font-size: 28px;
+        bottom: -4px;
         left: 10px;
     }
     
@@ -1191,9 +1191,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
-        left: 10px;
+        font-size: 28px;
+        bottom: -4px;
+        left: 5px;
     }
     
     #street1 {
@@ -1396,9 +1396,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
-        left: 10px;
+        font-size: 28px;
+        bottom: -4px;
+        left: 5x;
     }
     
     #street1 {
@@ -1602,9 +1602,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
-        left: 10px;
+        font-size: 28px;
+        bottom: -4px;
+        left: 4px;
     }
     
     #street1 {
@@ -1807,9 +1807,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
-        left: 10px;
+        font-size: 30px;
+        bottom: -4px;
+        left: 4px;
     }
     
     #street1 {
@@ -2012,9 +2012,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
-        left: 10px;
+        font-size: 30px;
+        bottom: -4px;
+        left: 4px;
     }
     
     #street1 {
@@ -2218,9 +2218,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
-        left: 10px;
+        font-size: 30px;
+        bottom: -4px;
+        left: 4px;
     }
     
     #street1 {
@@ -2423,9 +2423,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
-        left: 10px;
+        font-size: 25px;
+        bottom: -4px;
+        left: 4px;
     }
     
     #street1 {
@@ -2627,9 +2627,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
-        left: 10px;
+        font-size: 25px;
+        bottom: -4px;
+        left: 4px;
     }
     
     #street1 {
@@ -2831,9 +2831,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
-        left: 10px;
+        font-size: 25px;
+        bottom: -4px;
+        left: 4px;
     }
     
     #street1 {
@@ -3034,9 +3034,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
-        left: 10px;
+        font-size: 35px;
+        bottom: -7px;
+        left: 4px;
     }
     
     #street1 {
@@ -3237,9 +3237,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
-        bottom: 0px;
-        left: 10px;
+        font-size: 35px;
+        bottom: -7px;
+        left: 4px;
     }
     
     #street1 {
@@ -3324,7 +3324,7 @@ body {
 
 }
 
-@media screen and (max-width: 800px){
+@media screen and (width: 800px){
     body {
         margin: 0;
         width: 100%;
@@ -3442,9 +3442,9 @@ body {
     
     #gear {
         position: absolute;
-        font-size: 40px;
+        font-size: 25px;
         bottom: 0px;
-        left: 10px;
+        left: 5px;
     }
     
     #street1 {
