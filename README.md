@@ -21,5 +21,5 @@ You can find the original mt-hud by MT-Scripts [here](https://github.com/MT-Scri
 - Added atlas map
 - Responsive HUD across all available resolutions up to 1920x1080
 
-# Dependicies
+# Dependencies
 - qb-core
