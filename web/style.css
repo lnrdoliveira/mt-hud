@@ -1,0 +1,3529 @@
+@import url('https://fonts.cdnfonts.com/css/alarm-clock');
+@import url('https://fonts.cdnfonts.com/css/noto-sans-bengali');
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#player-hud-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: 5px;
+    gap: 1px;
+    left: 10px;
+    
+}
+
+.hud-field {
+    height: 25px;
+    width: 60px;
+    border-radius: 3px;
+    border: 1px solid #1b1d21c8;
+    background-color: #1b1d21c8;
+}
+
+.hud-field2 {
+    height: 25px;
+    width: 48px;
+    border-radius: 3px;
+    border: 1px solid #1b1d21c8;
+    background-color: #1b1d21c8;
+}
+
+.hud-icon {
+    z-index: 1;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.853);
+    position: absolute;
+}
+
+#health {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    background-color: rgba(0, 137, 2, 0.650);
+    transition: width 0.8s ease;
+}
+
+#armor {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    background-color: rgba(24, 27, 187, 0.466);
+    transition: width 0.8s ease;
+    
+}
+
+#thirst {
+    transform: rotate(180deg);
+    width: 70%;
+    height: 100%;
+    border-radius: 2px;
+    background-color: rgba(0, 133, 181, 0.650);
+    transition: width 0.8s ease;
+}
+
+#hunger {
+    transform: rotate(180deg);
+    width: 40%;
+    height: 100%;
+    border-radius: 2px;
+    background-color: rgba(217, 133, 60, 0.650);
+    transition: width 0.8s ease;
+}
+
+#stamina {
+    width: 40%;
+    height: 100%;
+    border-radius: 2px;
+    background-color: rgba(116, 116, 116, 0.65);
+    transition: width 0.8s ease;
+}
+
+#vehicle-hud-container {
+    display: none;
+    border-radius: 3px;
+    width: 298px;
+    height: 220px;
+    position: absolute;
+    left: 10px;
+    bottom: 33px;
+    font-family: 'alarm clock', sans-serif;
+    border: 2px solid #1b1d21;
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+#speed-type {
+    position: absolute;
+    font-size: 15px;
+    bottom: 55px;
+    color: #90f6fd; 
+    right: 5px;
+}
+
+
+
+#speed {
+    position: absolute;
+    font-size: 55px;
+    bottom: 0px;
+    color: #90f6fd; 
+    right: 5px;
+}
+
+#seatbelt {
+    position: absolute;
+    font-size: 15px;
+    bottom: 8px;
+    left: 28%;
+    color: rgb(248, 157, 157);
+}
+
+#altitude {
+    position: absolute;
+    font-size: 55px;
+    bottom: 6vh;
+    right: 5px;
+    color: #90f6fd; 
+}
+
+#alt-txt {
+    position: absolute;
+    font-size: 15px;
+    bottom: 11vh;
+    color: #90f6fd; 
+    right: 5px;
+}
+
+#fuel-icon {
+    position: absolute;
+    font-size: 15px;
+    bottom: 8px;
+    color: #90f6fd; 
+    right: 45%;
+}
+
+#fuel {
+    position: absolute;
+    font-size: 30px;
+    color: #90f6fd; 
+    bottom: 0px;
+    right: 50%;
+}
+
+#gear {
+    position: absolute;
+    font-size: 40px;
+    bottom: 0px;
+    left: 10px;
+}
+
+#street1 {
+    font-variant-caps: all-petite-caps;
+    font-family: 'Noto Sans Bengali', sans-serif;
+    color: #90f6fd;    
+    position: absolute;
+    font-size: 29px;
+    left: 10px;
+
+}
+
+#street2 {
+    font-variant-caps: all-petite-caps;
+    font-family: 'Noto Sans Bengali', sans-serif;
+    color: #90f6fd;  
+    position: absolute;
+    font-size: 23px;
+    top: 30px;
+    left: 10px;
+}
+
+#direction {
+    position: absolute;
+    font-family: 'Noto Sans Bengali', sans-serif;
+    color: #90f6fd;  
+    font-size: 20px;
+    top: 9px;
+    right: 5px;
+}
+
+
+#voz {
+    background-color: rgba(182, 182, 182, 0.765);
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 50px;
+    height: 4px;
+    border-radius: 1px;
+    transition: width 0.5s ease;
+    border: 1px solid #1b1d21c8;
+    
+}
+
+#voz-bg1 {
+    background-color: rgba(0, 0, 0, 0.365);
+    position: absolute;
+    bottom: 7px;
+    left: 16.5%;
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    opacity: 1;
+    border-radius: 1px;
+    border: 1px solid #000000c8;
+}
+
+#voz-bg2 {
+    background-color: rgba(0, 0, 0, 0.365);
+    position: absolute;
+    bottom: 15px;
+    left: 16.5%;
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    opacity: 1;
+    border-radius: 1px;
+    border: 1px solid #000000c8;
+}
+
+#voz-bg3 {
+    background-color: rgba(0, 0, 0, 0.365);
+    position: absolute;
+    bottom: 23px;
+    left: 16.5%;
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    opacity: 1;
+    border-radius: 1px;
+    border: 1px solid #000000c8;
+}
+
+@media only screen and (width: 1680px) and (height: 1050px) {
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 40px;
+        bottom: 7px;
+    }
+
+    #vehicle-hud-container {
+       display: none;
+        border-radius: 3px;
+        width: 290px;
+        height: 215px;
+        position: absolute;
+        left: 41px;
+        bottom: 31px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 20px;
+        bottom: 15px;
+        width: 60px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+
+    .hud-field2 {
+        height: 20px;
+        width: 41px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 20px;
+        bottom: 24px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 14px;
+        bottom: 5px;
+        left: 42%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 28px;
+        bottom: 40px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 20px;
+        bottom: 70px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 13px;
+        bottom: 4px;
+        right: 29%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 35%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 25px;
+        left: 3px;
+        bottom: 189px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 20px;
+        top: 18px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 25px;
+        right: 2px;
+        top: -6px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 6px;
+        left: 20%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 15px;
+        left: 20%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 24px;
+        left: 20%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media only screen and (width: 1600px) and (height: 1024px) {
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 39.1px;
+        bottom: 6px;
+    }
+
+    #vehicle-hud-container {
+       display: none;
+        border-radius: 3px;
+        width: 281px;
+        height: 208px;
+        position: absolute;
+        left: 40px;
+        bottom: 31px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 20px;
+        bottom: 15px;
+        width: 60px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+
+    .hud-field2 {
+        height: 20px;
+        width: 32.5px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 20px;
+        bottom: 24px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 14px;
+        bottom: 5px;
+        left: 42%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 28px;
+        bottom: 40px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 20px;
+        bottom: 70px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 13px;
+        bottom: 4px;
+        right: 29%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 35%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 25px;
+        left: 3px;
+        bottom: 180px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 18px;
+        top: 20px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 25px;
+        right: 2px;
+        top: -6px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 6px;
+        left: 20.5%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 14px;
+        left: 20.5%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 22px;
+        left: 20.5%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media only screen and (width: 1600px) and (height: 900px) {
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 7.8px;
+        bottom: 3px;
+    }
+
+    #vehicle-hud-container {
+        
+       display: none;
+        border-radius: 3px;
+        width: 246px;
+        height: 183px;
+        position: absolute;
+        left: 8px;
+        bottom: 27px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 20px;
+        bottom: 15px;
+        width: 50px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+
+    .hud-field2 {
+        height: 20px;
+        width: 36.5px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 20px;
+        bottom: 24px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 14px;
+        bottom: 5px;
+        left: 39%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 28px;
+        bottom: 40px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 20px;
+        bottom: 70px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 13px;
+        bottom: 4px;
+        right: 29%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 35%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 25px;
+        left: 3px;
+        bottom: 156px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 18px;
+        top: 20px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 25px;
+        right: 2px;
+        top: -6px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 3px;
+        left: 16.2%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 11px;
+        left: 16.2%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 19px;
+        left: 16.2%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media only screen and (width: 1440px) and (height: 1080px) {
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 36.8px;
+        bottom: 7px;
+    }
+
+    #vehicle-hud-container {
+       display: none;
+        border-radius: 3px;
+        width: 299px;
+        height: 220px;
+        position: absolute;
+        left: 38px;
+        bottom: 32px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 20px;
+        bottom: 15px;
+        width: 59px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+
+    .hud-field2 {
+        height: 20px;
+        width: 54px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 20px;
+        bottom: 24px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 14px;
+        bottom: 5px;
+        left: 41%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 28px;
+        bottom: 40px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 20px;
+        bottom: 70px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 13px;
+        bottom: 4px;
+        right: 29%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 35%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 25px;
+        left: 3px;
+        bottom: 190px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 18px;
+        top: 20px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 25px;
+        right: 2px;
+        top: -3px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 6px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 14px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 22px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media only screen and (width: 1440px) and (height: 900px) {
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 35.8px;
+        bottom: 2.3px;
+    }
+
+    #vehicle-hud-container {
+       display: none;
+        border-radius: 3px;
+        width: 247px;
+        height: 185px;
+        position: absolute;
+        left: 36px;
+        bottom: 26px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 20px;
+        bottom: 15px;
+        width: 49px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+
+    .hud-field2 {
+        height: 20px;
+        width: 41px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 20px;
+        bottom: 24px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 14px;
+        bottom: 5px;
+        left: 34%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 28px;
+        bottom: 38px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 20px;
+        bottom: 69px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 14px;
+        bottom: 4px;
+        right: 29%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 37%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 23px;
+        left: 3px;
+        bottom: 160px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 16px;
+        top: 20px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 25px;
+        right: 2px;
+        top: -3px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 2px;
+        left: 20%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 10px;
+        left: 20%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 18px;
+        left: 20%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media only screen and (width: 1366px) and (height: 768px) {
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 6.8px;
+        bottom: -0.4px;
+    }
+
+    #vehicle-hud-container {
+       display: none;
+        border-radius: 3px;
+        width: 210px;
+        height: 155px;
+        position: absolute;
+        left: 7px;
+        bottom: 23px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 20px;
+        bottom: 15px;
+        width: 42px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+
+    .hud-field2 {
+        height: 20px;
+        width: 32px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 20px;
+        bottom: 24px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 14px;
+        bottom: 5px;
+        left: 34%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 28px;
+        bottom: 38px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 20px;
+        bottom: 69px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 14px;
+        bottom: 4px;
+        right: 29%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 37%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 23px;
+        left: 3px;
+        bottom: 127px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 16px;
+        top: 18px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 25px;
+        right: 2px;
+        top: -3px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 1px;
+        left: 16.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 9px;
+        left: 16.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 17px;
+        left: 16.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+
+@media only screen and (width: 1360px) and (height: 768px) {
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 32.5px;
+        bottom: -0.4px;
+    }
+
+    #vehicle-hud-container {
+       display: none;
+        border-radius: 3px;
+        width: 210px;
+        height: 155px;
+        position: absolute;
+        left: 33px;
+        bottom: 23px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 20px;
+        bottom: 15px;
+        width: 42px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+
+    .hud-field2 {
+        height: 20px;
+        width: 32px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 20px;
+        bottom: 24px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 14px;
+        bottom: 5px;
+        left: 34%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 28px;
+        bottom: 38px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 20px;
+        bottom: 69px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 14px;
+        bottom: 4px;
+        right: 29%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 28px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 37%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 23px;
+        left: 3px;
+        bottom: 127px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 16px;
+        top: 18px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 25px;
+        right: 2px;
+        top: -3px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 1px;
+        left: 18.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 9px;
+        left: 18.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 17px;
+        left: 18.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media only screen and (width: 1280px) and (height: 1024px) {
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 35.5px;
+        bottom: 5.5px;
+    }
+
+    #vehicle-hud-container {
+       display: none;
+        border-radius: 3px;
+        width: 281px;
+        height: 210px;
+        position: absolute;
+        left: 36px;
+        bottom: 30px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 20px;
+        bottom: 15px;
+        width: 58px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+
+    .hud-field2 {
+        height: 20px;
+        width: 40px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 20px;
+        bottom: 24px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 30px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 14px;
+        bottom: 5px;
+        left: 39%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 30px;
+        bottom: 38px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 20px;
+        bottom: 69px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 15px;
+        bottom: 4px;
+        right: 29%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 30px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 37%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 25px;
+        left: 3px;
+        bottom: 182px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 19px;
+        top: 18px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 25px;
+        right: 2px;
+        top: -5px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 6px;
+        left: 25.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 14px;
+        left: 25.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 22px;
+        left: 25.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media only screen and (width: 1280px) and (height: 960px) {
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 33.5px;
+        bottom: 5.5px;
+    }
+
+    #vehicle-hud-container {
+       display: none;
+        border-radius: 3px;
+        width: 264px;
+        height: 196px;
+        position: absolute;
+        left: 34px;
+        bottom: 28px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 20px;
+        bottom: 15px;
+        width: 55px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+
+    .hud-field2 {
+        height: 20px;
+        width: 34px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 20px;
+        bottom: 24px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 30px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 14px;
+        bottom: 4px;
+        left: 34%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 30px;
+        bottom: 38px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 20px;
+        bottom: 69px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 15px;
+        bottom: 4px;
+        right: 29%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 30px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 37%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 23px;
+        left: 3px;
+        bottom: 172px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 18px;
+        top: 13px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 23px;
+        right: 2px;
+        top: -5px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 6px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 14px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 22px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media only screen and (width: 1280px) and (height: 800px) {
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 30px;
+        bottom: 2.5px;
+    }
+
+    #vehicle-hud-container {
+       display: none;
+        border-radius: 3px;
+        width: 223px;
+        height: 164px;
+        position: absolute;
+        left: 30px;
+        bottom: 23px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 18px;
+        bottom: 15px;
+        width: 45px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+
+    .hud-field2 {
+        height: 18px;
+        width: 33px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 20px;
+        bottom: 24px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 30px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 14px;
+        bottom: 4px;
+        left: 34%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 30px;
+        bottom: 38px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 20px;
+        bottom: 69px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 15px;
+        bottom: 4px;
+        right: 29%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 30px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 37%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 20px;
+        left: 3px;
+        bottom: 143px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 16px;
+        top: 13px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 20px;
+        right: 2px;
+        top: -5px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 2px;
+        left: 20.2%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 10px;
+        left: 20.2%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 18px;
+        left: 20.2%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media only screen and (width: 1280px) and (height: 768px) {
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 30px;
+        bottom: 2.5px;
+    }
+
+    #vehicle-hud-container {
+        display: none;
+        border-radius: 3px;
+        width: 213px;
+        height: 157px;
+        position: absolute;
+        left: 30px;
+        bottom: 22px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 17px;
+        bottom: 15px;
+        width: 43px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+
+    .hud-field2 {
+        height: 17px;
+        width: 30px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 13px;
+        bottom: 21px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 25px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 12px;
+        bottom: 3px;
+        left: 32%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 25px;
+        bottom: 35px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 13px;
+        bottom: 61px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 12px;
+        bottom: 2px;
+        right: 30%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 25px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 37%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 20px;
+        left: 3px;
+        bottom: 125px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 16px;
+        top: 13px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 20px;
+        right: 2px;
+        top: -3px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 2px;
+        left: 19.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 10px;
+        left: 19.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 18px;
+        left: 19.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media screen and (max-width: 1280px) and (max-height: 720px){
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 7px;
+        bottom: 2.5px;
+    }
+
+    #vehicle-hud-container {
+        display: none;
+        border-radius: 3px;
+        width: 198px;
+        height: 147px;
+        position: absolute;
+        left: 7px;
+        bottom: 20px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 15px;
+        bottom: 15px;
+        width: 40px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    .hud-field2 {
+        height: 15px;
+        width: 29px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 13px;
+        bottom: 21px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 25px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 12px;
+        bottom: 3px;
+        left: 32%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 25px;
+        bottom: 35px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 13px;
+        bottom: 61px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 12px;
+        bottom: 2px;
+        right: 30%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 25px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 37%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 20px;
+        left: 3px;
+        bottom: 125px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 16px;
+        top: 13px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 20px;
+        right: 2px;
+        top: -3px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 2px;
+        left: 16.6%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 10px;
+        left: 16.6%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 18px;
+        left: 16.6%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media screen and (max-width: 1176px){
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 28px;
+        bottom: 2.5px;
+    }
+
+    #vehicle-hud-container {
+        display: none;
+        border-radius: 3px;
+        width: 182px;
+        height: 134px;
+        position: absolute;
+        left: 28px;
+        bottom: 20px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 15px;
+        bottom: 15px;
+        width: 35px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    .hud-field2 {
+        height: 15px;
+        width: 32px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 13px;
+        bottom: 21px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 25px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 12px;
+        bottom: 3px;
+        left: 32%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 25px;
+        bottom: 35px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 13px;
+        bottom: 61px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 12px;
+        bottom: 2px;
+        right: 30%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 25px;
+        bottom: -4px;
+        color: #90f6fd; 
+        right: 37%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;   
+        position: absolute;
+        font-size: 20px;
+        left: 3px;
+        bottom: 113px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 15px;
+        top: 13px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 20px;
+        right: 2px;
+        top: -5px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 2px;
+        left: 18.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 10px;
+        left: 18.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 18px;
+        left: 18.4%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media screen and (max-width: 1152px){
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 30px;
+    }
+
+    #vehicle-hud-container {
+        display: none;
+        border-radius: 3px;
+        width: 238px;
+        height: 176px;
+        position: absolute;
+        left: 30px;
+        bottom: 26px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 18px;
+        bottom: 10%;
+        width: 48px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    .hud-field2 {
+        height: 18px;
+        width: 36px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 23px;
+        bottom: 25px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 35px;
+        bottom: -7px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 12px;
+        bottom: 3px;
+        left: 22%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 35px;
+        bottom: 42px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 23px;
+        bottom: 73px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 14px;
+        bottom: 2px;
+        right: 38%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 35px;
+        bottom: -7px;
+        color: #90f6fd; 
+        right: 45%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        position: absolute;
+        font-size: 20px;
+        left: 3px;
+        bottom: 155px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 17px;
+        top: 13px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 20px;
+        right: 2px;
+        top: -5px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 5px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 13px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 21px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media screen and (max-width: 1024px){
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 27px;
+    }
+
+    #vehicle-hud-container {
+        display: none;
+        border-radius: 3px;
+        width: 212px;
+        height: 156px;
+        position: absolute;
+        left: 27px;
+        bottom: 22px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 14px;
+        bottom: 10%;
+        width: 43px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    .hud-field2 {
+        height: 14px;
+        width: 30px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 23px;
+        bottom: 25px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 35px;
+        bottom: -7px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 12px;
+        bottom: 3px;
+        left: 22%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 35px;
+        bottom: 42px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 23px;
+        bottom: 73px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 14px;
+        bottom: 2px;
+        right: 38%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 35px;
+        bottom: -7px;
+        color: #90f6fd; 
+        right: 45%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        position: absolute;
+        font-size: 20px;
+        left: 3px;
+        bottom: 135px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 15px;
+        top: 13px;
+        color: #90f6fd; 
+        left: 3px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 20px;
+        right: 2px;
+        top: -5px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 5px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 13px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 21px;
+        left: 23.8%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
+
+@media screen and (max-width: 800px){
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #player-hud-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1px;
+        left: 20px;
+
+
+    }
+
+    #vehicle-hud-container {
+        display: none;
+        border-radius: 3px;
+        width: 165px;
+        height: 122px;
+        position: absolute;
+        left: 20px;
+        bottom: 17px;
+        font-family: 'alarm clock', sans-serif;
+        border: 2px solid #1b1d21;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+    }    
+
+    
+    .hud-field {
+        height: 7px;
+        bottom: 10%;
+        width: 33px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    .hud-field2 {
+        height: 7px;
+        width: 23px;
+        border-radius: 3px;
+        border: 1px solid #1b1d21c8;
+        background-color: #1b1d21c8;
+    }
+    
+
+    .hud-icon {
+        z-index: 1;
+        margin-left: 5px;
+        margin-top: 0px;
+        font-size: 6px;
+        color: rgba(255, 255, 255, 0.853);
+        position: absolute;
+    }
+
+    #speed-type {
+        position: absolute;
+        font-size: 10px;
+        bottom: 25px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    #speed {
+        position: absolute;
+        font-size: 25px;
+        bottom: 0px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+
+    #seatbelt {
+        position: absolute;
+        font-size: 8px;
+        bottom: 8px;
+        left: 35%;
+        color: rgb(248, 157, 157);
+    }
+    
+    #altitude {
+        position: absolute;
+        font-size: 25px;
+        bottom: 35px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #alt-txt {
+        position: absolute;
+        font-size: 10px;
+        bottom: 60px;
+        color: #90f6fd; 
+        right: 5px;
+    }
+    
+    #fuel-icon {
+        position: absolute;
+        font-size: 8px;
+        bottom: 8px;
+        right: 30%;
+        color: #90f6fd; 
+    }
+    
+    #fuel {
+        position: absolute;
+        font-size: 25px;
+        bottom: 0px;
+        color: #90f6fd; 
+        right: 35%;
+    }
+    
+    #gear {
+        position: absolute;
+        font-size: 40px;
+        bottom: 0px;
+        left: 10px;
+    }
+    
+    #street1 {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        position: absolute;
+        font-size: 15px;
+        left: 2px;
+        bottom: 105px;
+    }
+    
+    #street2 {
+        position: absolute;
+        font-size: 10px;
+        bottom: 103px;
+        color: #90f6fd; 
+        left: 2px;
+    }
+    
+    #direction {
+        font-variant-caps: all-petite-caps;
+        font-family: 'Noto Sans Bengali', sans-serif;
+        color: #90f6fd;    
+        font-size: 20px;
+        right: 10px;
+        bottom: 105px;
+    }
+
+    /*voice*/
+    #voz {
+        background-color: rgba(182, 182, 182, 0.765);
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 4px;
+        border-radius: 1px;
+        transition: width 0.5s ease;
+        border: 1px solid #20211bc8;
+        
+    }
+    
+    #voz-bg1 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 7px;
+        left: 23.7%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg2 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 15px;
+        left: 23.7%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+    
+    #voz-bg3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        position: absolute;
+        bottom: 23px;
+        left: 23.7%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        opacity: 1;
+        border-radius: 1px;
+        border: 1px solid #000000c8;
+    }
+
+}
